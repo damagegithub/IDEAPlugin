@@ -1,0 +1,50 @@
+<idea-plugin>
+  <id>jph.demo</id>
+  <name>自动翻译</name>
+  <version>1.0</version>
+  <vendor email="jphandll@gmail.com" url="http://www.google.com">ITMO</vendor>
+
+  <description><![CDATA[
+      自动翻译<br>
+      <em>www.google.com</em>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      my demo.<br>
+      <em>1.0我不知道为什么自动生成的东西一直报错</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+    <projectService serviceImplementation="com.itmo.jph.trh"/>
+    <moduleService serviceInterface="com.itmo.jph.fdasds" serviceImplementation="com.itmo.jph.impl.fdasdsImpl"/>
+    <themeProvider id="6bab9556-0b14-41e2-ad4f-b5e6b9f2ba88" path="/com/itmo/jph/qwe.theme.json"/>
+  </extensions>
+
+
+  <actions>
+    <action id="StudyEditor.autoTranslator" class="com.itmo.jph.MainAction" text="Что это?"
+            description="自动翻译成目标语言">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt T"/>
+    </action>
+
+    <action id="StudyEditor.autoGiveName" class="com.itmo.jph.AutoTakeName" text="Give me a name"
+            description="自动翻译成英语">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+    </action>
+    <action id="StudyEditor.GetterAndSetter" class="com.itmo.jph.GetterAndSetter" text="Getter and setter"
+            description="自动生成get set">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+    </action>
+  </actions>
+
+</idea-plugin>
