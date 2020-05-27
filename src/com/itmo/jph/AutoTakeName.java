@@ -55,7 +55,7 @@ public class AutoTakeName extends AnAction {
         WriteCommandAction.runWriteCommandAction(project, runnable);
 
     }
-
+    //Select type
     private String getSelectedType(Document document, int startOffset) {
 
         String text = document.getText().substring(0, startOffset).trim();
